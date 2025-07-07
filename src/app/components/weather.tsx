@@ -32,7 +32,7 @@ export default function WeatherWidget({ location }: WeatherWidgetProps) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
- //API KEY WILL VARIATE
+ //API KEY 
   const API_KEY = "2ed4fba02b5243edab5160211250707" 
 
   useEffect(() => {

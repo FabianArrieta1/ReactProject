@@ -91,7 +91,7 @@ export default function DashboardProp() {
   const [selectedProp, setSelectedProp] = useState<Property | null>(null)
   const [opMenu, setOpMenu] = useState(false)
   const [filters, setFilters] = useState({
-    location: "",
+    location: ""
   })
 
   /*Search filter*/
@@ -277,7 +277,7 @@ export default function DashboardProp() {
         </div>
       )}
 
-      {/* Modal de detalles */}
+      {/* Details Modal */}
       {selectedProp && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="absolute inset-0  bg-opacity-50" onClick={() => setSelectedProp(null)}></div>

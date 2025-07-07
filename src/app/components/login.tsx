@@ -99,7 +99,7 @@ export default function Login({ onLogin }: LoginProps) {
               </div>
             )}
 
-            {/* Campo email */}
+            {/* Email */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
               <div className="relative">

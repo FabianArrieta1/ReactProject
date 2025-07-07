@@ -10,12 +10,12 @@ The menu includes a location filter and social media.
 
 ## External tools
 
-This project use bootstrap, lucide-react, antd and react-icons/si. You can install them in the server:
+This project use bootstrap, lucide-react, ant and react-icons/si. You can install them in the server:
 
 ```bash
 npm install bootstrap
 npm install lucide-react
-npm install antd
+npm install ant
 npm install react-icons
 ```
 
@@ -47,6 +47,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Live Demo
+
+You can see the live project here:
+
+```bash
+https://oceanspropertiesproject-85ymr7qhm-fabianarrietag-4101s-projects.vercel.app
+
+```
 
 ## Learn More
 

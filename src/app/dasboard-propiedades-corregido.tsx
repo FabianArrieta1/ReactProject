@@ -5,7 +5,7 @@ import { Search, Filter, MapPin, Bed, Bath, Heart, Star } from "lucide-react"
 import { SiYoutube, SiInstagram } from "react-icons/si"
 import WeatherWidget from "./components/weather"
 
-// Definir el tipo de propiedad
+// Define the type of property
 type Property = {
   id: number
   title: string
@@ -21,7 +21,7 @@ type Property = {
   rooms: number
 }
 
-/*Lista de Propiedades*/
+/*List of Properties*/
 const properties: Property[] = [
   {
     id: 1,
@@ -66,7 +66,7 @@ const properties: Property[] = [
     id: 3,
     title: "Tamarindo luxury villa",
     price: 463000,
-    location: "Tamarindo,Gunacaste",
+    location: "Tamarindo,Guanacaste",
     image: "/img/Tamarindo-Main.png",
     images: ["/img/Tamarindo-Bath.png", "/img/Tamarindo-Bed.png", "/img/Tamarindo-Pool.png"],
     description: "Unique family-owned luxury villa located in the heart of Tamarindo.",
@@ -88,14 +88,13 @@ const properties: Property[] = [
 ]
 
 export default function DashboardProp() {
-  // Especificar el tipo del estado
   const [selectedProp, setSelectedProp] = useState<Property | null>(null)
   const [opMenu, setOpMenu] = useState(false)
   const [filters, setFilters] = useState({
     location: "",
   })
 
-  /*Filtros para busqueda*/
+  /*Search filter*/
   const [search, setSearch] = useState("")
   const filtProp = properties.filter((property) => {
     const trueLocation = !filters.location || property.location.toLowerCase().includes(filters.location.toLowerCase())
@@ -107,7 +106,7 @@ export default function DashboardProp() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Este es el header */}
+      {/*header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -119,7 +118,7 @@ export default function DashboardProp() {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
                 <input
                   type="text"
-                  placeholder="Buscar propiedades..."
+                  placeholder="Look for properties..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className="pl-10 w-64 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -137,13 +136,13 @@ export default function DashboardProp() {
         </div>
       </header>
 
-      {/* Contenido principal en el que se muestran las propiedades */}
+      {/* Main content*/}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-6">
           <p className="text-gray-600">{filtProp.length} Available Properties</p>
         </div>
 
-        {/* Lista de propiedades */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtProp.map((prop) => (
             <div
@@ -205,7 +204,7 @@ export default function DashboardProp() {
                     </div>
                   </div>
                   <div className="absolute bottom-2 left-2">
-                    <span className="bg-blue-600 text-white px-2 py-1 rounded text-xs">Ver detalles</span>
+                    <span className="bg-blue-600 text-white px-2 py-1 rounded text-xs">More Info</span>
                   </div>
                 </div>
               </div>
@@ -214,7 +213,7 @@ export default function DashboardProp() {
         </div>
       </main>
 
-      {/* Menú lateral */}
+      {/* Menu */}
       {opMenu && (
         <div className="fixed inset-0 z-50">
           <div className="absolute inset-0 " onClick={() => setOpMenu(false)}></div>
@@ -228,7 +227,7 @@ export default function DashboardProp() {
               </div>
 
               <div className="space-y-8">
-                {/* Filtro de Ubicación */}
+                {/* Location Filter */}
                 <div>
                   <label className="text-sm font-medium mb-3 block">Filter by Location</label>
                   <div className="relative">
@@ -243,7 +242,7 @@ export default function DashboardProp() {
                   </div>
                 </div>
 
-                {/* Botón limpiar filtros */}
+                {/* Clean Filters */}
                 <button
                   onClick={() => setFilters({ location: "" })}
                   disabled={!filters.location}
@@ -252,19 +251,19 @@ export default function DashboardProp() {
                   Clean Filters
                 </button>
 
-                {/* Redes Sociales */}
+                {/* Social*/}
                 <div className="border-t pt-6">
                   <h3 className="text-sm font-medium mb-4">Our Social Media</h3>
                   <div className="space-y-3">
                     <a
-                      href="https://instagram.com"
+                      href="https://instagram.com/oceanscode"
                       className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100"
                     >
                       <SiInstagram className="h-5 w-5 text-pink-600" />
                       <span className="text-sm">Instagram</span>
                     </a>
                     <a
-                      href="https://youtube.com"
+                      href="https://m.youtube.com/@oceanscode?fbclid=PAQ0xDSwLY0wdleHRuA2FlbQIxMAABp5F3YHiE7MTXxlz0KGazM9hZIThbI05jYQxn-noBMEvJC8EIyNgOk_AQFDbE_aem_hKV6CoS2pq5HhBXkQ5rnPA"
                       className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100"
                     >
                       <SiYoutube className="h-5 w-5 text-red-600" />
@@ -281,7 +280,7 @@ export default function DashboardProp() {
       {/* Modal de detalles */}
       {selectedProp && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-          <div className="absolute inset-0 bg-black bg-opacity-50" onClick={() => setSelectedProp(null)}></div>
+          <div className="absolute inset-0  bg-opacity-50" onClick={() => setSelectedProp(null)}></div>
           <div className="relative bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto m-4">
             <div className="p-6">
               <div className="flex justify-between items-center mb-4">

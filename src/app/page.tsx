@@ -26,7 +26,7 @@ export default function App() {
 
   return (
     <div>
-      {/* Header con información del usuario */}
+      {/* User Info on header */}
       <div className="bg-white border-b px-4 py-2">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-3">
@@ -47,7 +47,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* Dashboard principal */}
+     {/*MAIN DASHBOARD*/}
       <DashboardProp />
     </div>
   )

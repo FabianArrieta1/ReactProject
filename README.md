@@ -1,6 +1,25 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## Project View
+
+This is a Home Rental Dashboard simulating the admin side. It includes a login and a principal dashboard.
+The dashboard includes a list of properties and their details and price.
+Once you select an item a card will show you more images an a full description, including features and the current weather at the location of the property, this posible with `WeatherAPI`.
+The main dashboard includes a menu and a filter. With the filter you can look for properties based on property name or location.
+The menu includes a location filter and social media.
+
+## External tools
+
+This project use bootstrap, lucide-react, antd and react-icons/si. You can install them in the server:
+
+```bash
+npm install bootstrap
+npm install lucide-react
+npm install antd
+npm install react-icons
+```
+
+## Getting Started with LocalHost
 
 First, run the development server:
 
@@ -12,6 +31,15 @@ yarn dev
 pnpm dev
 # or
 bun dev
+```
+
+## Login Credentials
+
+To access the dashboard you'll need to use the test credential.These credentials are included in the code and can be changed at any time.
+
+```bash
+Email: admin@oceansproperties.com
+Password: admin123
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -28,9 +56,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -9,7 +9,7 @@ type LoginProps = {
   onLogin: (userData: { email: string; name: string }) => void
 }
 
-// Credenciales de prueba como variables
+// Development credentials
 const TEST_CREDENTIALS = {
   email: "admin@oceansproperties.com",
   password: "admin123",
@@ -49,9 +49,9 @@ export default function Login({ onLogin }: LoginProps) {
 
     setIsLoading(true)
 
-    // Simular tiempo de carga
+    // Time to getIn
     setTimeout(() => {
-      // Verificar credenciales
+      // check the credentials
       if (formData.email === TEST_CREDENTIALS.email && formData.password === TEST_CREDENTIALS.password) {
         onLogin({
           email: TEST_CREDENTIALS.email,
@@ -67,7 +67,7 @@ export default function Login({ onLogin }: LoginProps) {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
-    // Limpiar error cuando el usuario empiece a escribir
+    // Clean and set while the user writes
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }))
     }
@@ -76,22 +76,13 @@ export default function Login({ onLogin }: LoginProps) {
     }
   }
 
-  const fillTestCredentials = () => {
-    setFormData({
-      email: TEST_CREDENTIALS.email,
-      password: TEST_CREDENTIALS.password,
-    })
-    setErrors({})
-  }
-
+  
+//Interface
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
       <div className="max-w-md w-full">
         {/* Logo y título */}
         <div className="text-center mb-8">
-          <div className="mx-auto w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-4">
-            <span className="text-white text-2xl font-bold">OP</span>
-          </div>
           <h1 className="text-3xl font-bold text-gray-900">Oceans Properties</h1>
           <p className="text-gray-600 mt-2">Welcome back! Please sign in to continue</p>
         </div>
@@ -127,7 +118,7 @@ export default function Login({ onLogin }: LoginProps) {
               {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
             </div>
 
-            {/* Campo contraseña */}
+          {/*PASSWORD*/}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
               <div className="relative">
@@ -153,7 +144,7 @@ export default function Login({ onLogin }: LoginProps) {
               {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
             </div>
 
-            {/* Botón submit */}
+           
             <button
               type="submit"
               disabled={isLoading}
@@ -169,29 +160,13 @@ export default function Login({ onLogin }: LoginProps) {
               )}
             </button>
           </form>
-
-          {/* Credenciales de prueba */}
-          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-            <div className="flex justify-between items-center mb-2">
-              <p className="text-sm text-gray-600 font-medium">Test Credentials:</p>
-              <button onClick={fillTestCredentials} className="text-xs text-blue-600 hover:text-blue-700 font-medium">
-                Auto-fill
-              </button>
-            </div>
-            <div className="text-xs text-gray-500 space-y-1">
-              <p>
-                <strong>Email:</strong> {TEST_CREDENTIALS.email}
-              </p>
-              <p>
-                <strong>Password:</strong> {TEST_CREDENTIALS.password}
-              </p>
-            </div>
-          </div>
+              
+          
         </div>
 
         {/* Footer */}
         <div className="text-center mt-8 text-sm text-gray-500">
-          <p>© 2024 Oceans Properties. All rights reserved.</p>
+          <p>© 2025 Oceans Properties. All rights reserved.</p>
         </div>
       </div>
     </div>

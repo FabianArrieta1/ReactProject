@@ -32,8 +32,8 @@ export default function WeatherWidget({ location }: WeatherWidgetProps) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
- 
-  const API_KEY = "7773fb543dadcf90441076ef2e481d18" 
+ //API KEY WILL VARIATE
+  const API_KEY = "2ed4fba02b5243edab5160211250707" 
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -42,35 +42,8 @@ export default function WeatherWidget({ location }: WeatherWidgetProps) {
         setError(null)
 
        
-        if (API_KEY === "7773fb543dadcf90441076ef2e481d18") {
-          // Datos simulados para desarrollo
-          setTimeout(() => {
-            const mockWeather: WeatherData = {
-              location: {
-                name: location.split(",")[0],
-                country: "Costa Rica",
-              },
-              current: {
-                temp_c: Math.floor(Math.random() * 10) + 25, // 25-35°C
-                temp_f: Math.floor(Math.random() * 18) + 77, // 77-95°F
-                condition: {
-                  text: ["Sunny", "Partly cloudy", "Cloudy", "Light rain"][Math.floor(Math.random() * 4)],
-                  icon: "//cdn.weatherapi.com/weather/64x64/day/116.png",
-                  code: 1000,
-                },
-                wind_kph: Math.floor(Math.random() * 20) + 5,
-                humidity: Math.floor(Math.random() * 30) + 60,
-                vis_km: Math.floor(Math.random() * 5) + 10,
-                feelslike_c: Math.floor(Math.random() * 10) + 27,
-              },
-            }
-            setWeather(mockWeather)
-            setLoading(false)
-          }, 1000)
-          return
-        }
-
-        // Llamada  a la API
+        
+        //API CALL
         const response = await fetch(
           `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${encodeURIComponent(location)}&aqi=no`,
         )
@@ -128,7 +101,7 @@ export default function WeatherWidget({ location }: WeatherWidgetProps) {
 
   return (
     <div className="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg p-4 border border-blue-200">
-      {/* Header del clima */}
+     
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center">
           {getWeatherIcon(weather.current.condition.text)}
@@ -143,7 +116,7 @@ export default function WeatherWidget({ location }: WeatherWidgetProps) {
         </div>
       </div>
 
-      {/* Detalles del clima */}
+  
       <div className="grid grid-cols-3 gap-3 text-xs">
         <div className="flex items-center">
           <Thermometer className="h-3 w-3 text-orange-500 mr-1" />
